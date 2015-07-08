@@ -2,6 +2,7 @@
 
 'use strict';
 
+var identity = require('lodash.identity');
 var decimal = require('decimal.js');
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
   div: div,
   toString: toString,
   valueOf: toString,
-  toJSON: toString
+  parseInput: identity
 };
 
 function getPrecision(Decimal) {

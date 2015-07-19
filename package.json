@@ -11,7 +11,8 @@
     "url": "git+https://github.com/javiercejudo/decimaljs-adapter.git"
   },
   "keywords": [
-    "linear-arbitrary-precision-adapter"
+    "linear-arbitrary-precision-adapter",
+    "arbitrary-precision-adapter"
   ],
   "author": "Javier Cejudo <javier@javiercejudo.com> (http://www.javiercejudo.com)",
   "license": "MIT",

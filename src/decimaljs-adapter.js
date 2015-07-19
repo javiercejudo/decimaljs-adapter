@@ -13,6 +13,7 @@ module.exports = {
   minus: minus,
   times: times,
   div: div,
+  pow: pow,
   toString: toString,
   valueOf: toString,
   parseInput: identity
@@ -26,22 +27,26 @@ function setPrecision(Decimal, n) {
   Decimal.precision = n;
 }
 
-function plus(decimal, x) {
-  return decimal.plus(x);
+function plus(x, y) {
+  return x.plus(y);
 }
 
-function minus(decimal, x) {
-  return decimal.minus(x);
+function minus(x, y) {
+  return x.minus(y);
 }
 
-function times(decimal, x) {
-  return decimal.times(x);
+function times(x, y) {
+  return x.times(y);
 }
 
-function div(decimal, x) {
-  return decimal.div(x);
+function div(x, y) {
+  return x.div(y);
 }
 
-function toString(decimal) {
-  return decimal.toString();
+function pow(x, y) {
+  return x.pow(y);
+}
+
+function toString(x) {
+  return x.toString();
 }

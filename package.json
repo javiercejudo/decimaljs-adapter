@@ -1,6 +1,6 @@
 {
   "name": "decimaljs-adapter",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "decimal.js adapter for linear-arbitrary-precision",
   "main": "src/decimaljs-adapter.js",
   "scripts": {

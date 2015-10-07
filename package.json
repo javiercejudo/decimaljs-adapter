@@ -31,7 +31,7 @@
     "should": "7.1.0"
   },
   "dependencies": {
-    "decimal.js": "4.0.2",
+    "decimal.js": "4.0.3",
     "lodash.identity": "3.0.0"
   }
 }

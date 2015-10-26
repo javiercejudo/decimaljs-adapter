@@ -21,17 +21,17 @@
   },
   "homepage": "https://github.com/javiercejudo/decimaljs-adapter#readme",
   "devDependencies": {
-    "arbitrary-precision": "1.1.1",
-    "gulp": "3.9.0",
-    "gulp-coverage": "0.3.37",
-    "gulp-coveralls": "0.1.4",
-    "gulp-istanbul": "0.10.2",
-    "gulp-mocha": "2.1.3",
-    "rimraf": "2.4.3",
-    "should": "7.1.0"
+    "arbitrary-precision": "^1.1.2",
+    "gulp": "^3.9.0",
+    "gulp-coverage": "^0.3.38",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-istanbul": "^0.10.2",
+    "gulp-mocha": "^2.1.3",
+    "rimraf": "^2.4.3",
+    "should": "^7.1.0"
   },
   "dependencies": {
-    "decimal.js": "4.0.2",
-    "lodash.identity": "3.0.0"
+    "decimal.js": "^4.0.2",
+    "lodash.identity": "^3.0.0"
   }
 }

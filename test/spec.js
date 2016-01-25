@@ -44,9 +44,22 @@ describe('arbitrary precision with decimal.js', function() {
       new Decimal('0.3').div(new Decimal('0.2')).toString().should.be.exactly('1.5');
     });
 
+    it('should have a mod method', function() {
+      adapter.mod(new Decimal('12'), new Decimal('5')).toString().should.be.exactly('2');
+    });
+
     it('should have a pow method', function() {
       new Decimal('2').pow(new Decimal('3')).valueOf().should.be.exactly('8');
       new Decimal('81').pow(new Decimal('0.5')).valueOf().should.be.exactly('9');
+    });
+
+    it('should have an sqrt method', function() {
+      new Decimal('9').sqrt().valueOf().should.be.exactly('3');
+    });
+
+    it('should have an equals method', function() {
+      new Decimal('2').equals(new Decimal('2')).should.be.exactly(true);
+      new Decimal('2').equals(new Decimal('3')).should.be.exactly(false);
     });
   });
 

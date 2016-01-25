@@ -13,7 +13,10 @@ module.exports = {
   minus: minus,
   times: times,
   div: div,
+  mod: mod,
   pow: pow,
+  sqrt: sqrt,
+  equals: equals,
   toString: toString,
   valueOf: toString,
   parseInput: identity
@@ -43,8 +46,20 @@ function div(x, y) {
   return x.div(y);
 }
 
+function mod(x, y) {
+  return x.mod(y);
+}
+
 function pow(x, y) {
   return x.pow(y);
+}
+
+function sqrt(x) {
+  return x.sqrt();
+}
+
+function equals(x, y) {
+  return x.eq(y);
 }
 
 function toString(x) {

@@ -6,7 +6,7 @@ var identity = require('lodash.identity');
 var decimal = require('decimal.js');
 
 module.exports = {
-  getInstance: decimal.constructor,
+  getInstance: getInstance,
   getPrecision: getPrecision,
   setPrecision: setPrecision,
   plus: plus,
@@ -27,7 +27,7 @@ function getPrecision(Decimal) {
 }
 
 function setPrecision(Decimal, n) {
-  Decimal.precision = n;
+  Decimal.config({ precision: n });
 }
 
 function plus(x, y) {
@@ -64,4 +64,8 @@ function equals(x, y) {
 
 function toString(x) {
   return x.toString();
+}
+
+function getInstance() {
+  return decimal.clone();
 }

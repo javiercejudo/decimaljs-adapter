@@ -7,6 +7,7 @@ var decimalFactory = require('arbitrary-precision');
 var adapter = require('../src/decimaljs-adapter');
 
 var Decimal = decimalFactory(adapter);
+var DecimalJs = adapter.getInstance();
 
 describe('arbitrary precision with decimal.js', function() {
   describe('precision', function() {
@@ -60,6 +61,41 @@ describe('arbitrary precision with decimal.js', function() {
     it('should have an equals method', function() {
       new Decimal('2').equals(new Decimal('2')).should.be.exactly(true);
       new Decimal('2').equals(new Decimal('3')).should.be.exactly(false);
+    });
+
+    it('should have a gt method', function() {
+      adapter.gt(new Decimal('2'), new Decimal('2')).should.be.exactly(false);
+      adapter.gt(new Decimal('2'), new Decimal('3')).should.be.exactly(false);
+      adapter.gt(new Decimal('2'), new Decimal('1')).should.be.exactly(true);
+    });
+
+    it('should have a gte method', function() {
+      adapter.gte(new Decimal('2'), new Decimal('2')).should.be.exactly(true);
+      adapter.gte(new Decimal('2'), new Decimal('3')).should.be.exactly(false);
+      adapter.gte(new Decimal('2'), new Decimal('1')).should.be.exactly(true);
+    });
+
+    it('should have a lt method', function() {
+      adapter.lt(new Decimal('2'), new Decimal('2')).should.be.exactly(false);
+      adapter.lt(new Decimal('2'), new Decimal('3')).should.be.exactly(true);
+      adapter.lt(new Decimal('2'), new Decimal('1')).should.be.exactly(false);
+    });
+
+    it('should have a lte method', function() {
+      adapter.lte(new Decimal('2'), new Decimal('2')).should.be.exactly(true);
+      adapter.lte(new Decimal('2'), new Decimal('3')).should.be.exactly(true);
+      adapter.lte(new Decimal('2'), new Decimal('1')).should.be.exactly(false);
+    });
+
+    it('should have a cmp method', function() {
+      adapter.cmp(new Decimal('2'), new Decimal('2')).valueOf().should.be.exactly(0);
+      adapter.cmp(new Decimal('2'), new Decimal('3')).valueOf().should.be.exactly(-1);
+      adapter.cmp(new Decimal('2'), new Decimal('1')).valueOf().should.be.exactly(1);
+    });
+
+    it('should have a abs method', function() {
+      adapter.abs(new DecimalJs('16')).toNumber().should.be.exactly(16);
+      adapter.abs(new DecimalJs('-5')).toNumber().should.be.exactly(5);
     });
   });
 

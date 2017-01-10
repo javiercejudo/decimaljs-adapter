@@ -31,7 +31,7 @@
     "should": "^8.0.0"
   },
   "dependencies": {
-    "decimal.js": "^5.0.0",
+    "decimal.js": "^7.1.1",
     "lodash.identity": "^3.0.0"
   }
 }
